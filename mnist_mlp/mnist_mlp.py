@@ -19,7 +19,6 @@ print(y_train[0])
 model = Sequential()
 model.add(Flatten(input_shape = (28,28)))
 model.add(Dense(64,activation='relu'))
-model.add(Dense(32,activation='relu'))
 model.add(Dense(10,activation='softmax'))
 
 # compile
@@ -34,5 +33,5 @@ model.evaluate(X_test,y_test)
 # visualization
 plt.imshow(X_train[0], cmap='gray')
 plt.title(f"Label: {y_train[0].argmax()}")
-plt.savefig("image.png")
+plt.savefig("image1.png")
 plt.show()
