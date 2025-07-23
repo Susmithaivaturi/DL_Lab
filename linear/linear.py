@@ -13,10 +13,10 @@ model=Sequential()
 model.add(Dense(units=1,input_dim=1,activation='linear'))
 
 # compile
-model.compile(optimizer='sgd',loss='mse')
+model.compile(optimizer='sgd',loss='mse',metrics=['mae'])
 
 # train
-model.fit(X,y,epochs=5)
+model.fit(X,y,epochs=10,batch_size=16)
 
 # evaluate
 model.evaluate(X,y)
