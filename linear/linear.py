@@ -16,7 +16,7 @@ model.add(Dense(units=1,input_dim=1,activation='linear'))
 model.compile(optimizer='sgd',loss='mse',metrics=['mae'])
 
 # train
-model.fit(X,y,epochs=10,batch_size=16)
+model.fit(X,y,epochs=50,batch_size=16)
 
 # evaluate
 model.evaluate(X,y)
@@ -26,5 +26,5 @@ result=model.predict(X)
 plt.scatter(X,y,label="original data")
 plt.plot(X,result,label="predicted data",color="red")
 plt.legend()
-plt.savefig("linear1.png")
+plt.savefig("linear2.png")
 plt.show()
