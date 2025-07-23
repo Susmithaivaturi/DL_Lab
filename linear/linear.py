@@ -10,10 +10,11 @@ y=3*X+7+3*np.random.randn(1000)
 
 # architecture
 model=Sequential()
+model.add(Dense(units=64,input_dim=1,activation='relu'))
 model.add(Dense(units=1,input_dim=1,activation='linear'))
 
 # compile
-model.compile(optimizer='sgd',loss='mse',metrics=['mae'])
+model.compile(optimizer='adam',loss='mse',metrics=['mse'])
 
 # train
 model.fit(X,y,epochs=10,batch_size=64)
@@ -26,5 +27,5 @@ result=model.predict(X)
 plt.scatter(X,y,label="original data")
 plt.plot(X,result,label="predicted data",color="red")
 plt.legend()
-plt.savefig("linear3.png")
+plt.savefig("linear4.png")
 plt.show()
